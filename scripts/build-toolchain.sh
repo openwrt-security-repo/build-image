@@ -15,3 +15,4 @@ make tools/install -j 32 V=s
 make toolchain/install -j 32 V=s
 
 make package/usign/compile V=sc -j32
+make package/usign/host/compile
