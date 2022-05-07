@@ -13,6 +13,6 @@ for VERSION in $VERSIONS; do
 
 		docker run --rm -v $(pwd)/scripts:/tmp/scripts -v $(pwd)/boards/$BOARD:/tmp/board -e VERSION=$VERSION builder-version:$VERSION /bin/bash /tmp/scripts/build-toolchain.sh
 
-		docker build . --tag builder:$BOARD-$VERSION --build-arg VERSION=$VERSION --build-arg BOARD=$BOARD
+		docker build . --tag builder-openwrt:$BOARD-$VERSION --build-arg VERSION=$VERSION --build-arg BOARD=$BOARD
 	done
 done
