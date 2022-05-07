@@ -10,5 +10,5 @@ cd $BASE
 cp /tmp/board/config ./config
 make defconfig
 
-make tools/install V=s
-make toolchain/install V=s
+make tools/install -j 32 V=s
+make toolchain/install -j 32 V=s

@@ -4,4 +4,4 @@ ARG BOARD=unknown
 ARG VERSION=master
 
 COPY ./boards/$BOARD/build/openwrt-$VERSION /tmp/openwrt
-WORKDIR /openwrt
+WORKDIR /tmp/openwrt
