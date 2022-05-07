@@ -12,5 +12,7 @@ for VERSION in $VERSIONS; do
 		mkdir -p boards/$BOARD/build
 
 		docker run --rm -v $(pwd)/scripts:/tmp/scripts -v $(pwd)/boards/$BOARD:/tmp/board -e VERSION=$VERSION builder-version:$VERSION /bin/bash /tmp/scripts/build-toolchain.sh
+
+		docker build . --tag builder:$BOARD-$VERSION --build-arg VERSION=$VERSION --build-arg BOARD=$BOARD
 	done
 done
