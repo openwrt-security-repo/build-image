@@ -9,4 +9,4 @@ RUN apt update -y ; apt upgrade -y
 # Install deps from https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem#debianubuntu
 RUN apt install -y build-essential gawk gcc-multilib flex git gettext libncurses5-dev libssl-dev python3-distutils zlib1g-dev
 
-RUN apt install -y unzip wget rsync
+RUN apt install -y unzip wget rsync libpam liblzma
