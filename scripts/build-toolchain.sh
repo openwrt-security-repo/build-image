@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ls /tmp/board
-
 BASE=/tmp/board/build/openwrt-$VERSION
 
 rm -rf $BASE
@@ -12,5 +10,5 @@ cd $BASE
 cp /tmp/board/config ./config
 make defconfig
 
-make tools/install
-make toolchain/install
+make tools/install V=s
+make toolchain/install V=s

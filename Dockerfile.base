@@ -2,11 +2,10 @@ FROM debian:buster
 
 # Reduce chance of error during deps installation
 ENV DEBIAN_FRONTEND="noninteractive"
+ENV FORCE_UNSAFE_CONFIGURE=1
 
 # Update system
 RUN apt update -y ; apt upgrade -y
 
 # Install deps from https://openwrt.org/docs/guide-developer/toolchain/install-buildsystem#debianubuntu
-RUN apt install -y build-essential gawk gcc-multilib flex git gettext libncurses5-dev libssl-dev python3-distutils zlib1g-dev
-
-RUN apt install -y unzip wget rsync
+RUN apt install -y apt build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python2-dev python3-dev
